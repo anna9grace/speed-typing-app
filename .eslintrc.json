@@ -1,0 +1,155 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended", // Eslint recommended configuration by eslint.
+    "plugin:import/recommended", // Linting of ES2015+ import/export syntax.
+    "plugin:react/recommended", // Recommended react linting configs.
+    "plugin:react-hooks/recommended", // Recommended react hooks linting configs.
+    "plugin:jsx-a11y/recommended", // Turns on a11y rules for JSX.
+    "plugin:@typescript-eslint/recommended", // Turns on rules from TypeScript-specific plugin.
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "@typescript-eslint",
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-duplicates": "error",
+    "import/no-named-as-default-member": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "ignoreCase": true,
+        "reservedFirst": true,
+        "noSortAlphabetically": true
+      }
+    ],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "indent": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-var-requires": "off",
+    "jsx-quotes": ["error", "prefer-double"],
+    "import/prefer-default-export": "off",
+    "import/no-anonymous-default-export": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars" : "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/jsx-no-bind": [
+      "warn",
+      {
+        "ignoreRefs": true,
+        "allowArrowFunctions": true,
+        "allowFunctions": false,
+        "allowBind": false,
+        "ignoreDOMComponents": true
+      }
+    ],
+    "react/jsx-pascal-case": [
+      "error",
+      {
+        "allowAllCaps": true,
+        "ignore": []
+      }
+    ],
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-indent-props": ["error", 2],
+    "react/destructuring-assignment": ["warn", "always"],
+    "react/display-name": "off",
+    "react/jsx-uses-react": ["error"],
+    "react/jsx-boolean-value": ["error"],
+    "react/jsx-curly-spacing": [
+      "warn",
+      {
+        "when": "never",
+        "allowMultiline": true
+      }
+    ],
+    "react/jsx-no-target-blank": [
+      "error",
+      {
+        "allowReferrer": true
+      }
+    ],
+    "react/no-unescaped-entities": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/alt-text": "error",
+    "jsx-a11y/aria-role": "error",
+    "jsx-a11y/img-redundant-alt": "error",
+    "jsx-a11y/aria-props": "error"
+  },
+  "env": {
+    "es6": true, // enable ES2015 features.
+    "browser": true, // enable use of global browser variables like `windows`.
+    "node": true // enable use of global node variables like `process`.
+  },
+  "parser": "@typescript-eslint/parser", // Allows Eslint to understand TypeScript syntax.
+  "parserOptions": {
+    "project": "./tsconfig.json", // Specify where to find the root tsconfig file of your project.
+    "ecmaVersion": 2021, // ECMAScript version supported in the project.
+    "sourceType": "module", // set to `module` because we ue ECMAScript modules.
+    "ecmaFeatures": {
+      "jsx": true // enable jsx for React.
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // auto-detect React version from package.json.
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"] // use typescript-eslint parser for .ts|tsx files.
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`.
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"], // Override config for same files pattern as jest `testMatch` default value
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
+      ],
+      "plugins": ["jest", "jest-dom", "testing-library"],
+      "rules": {
+        "testing-library/no-unnecessary-act": "off",
+        "jest/no-mocks-import": "off",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
+        "jest-dom/prefer-checked": "error",
+        "jest-dom/prefer-enabled-disabled": "error",
+        "jest-dom/prefer-required": "error",
+        "jest-dom/prefer-to-have-attribute": "error",
+        "testing-library/await-async-query": "error",
+        "testing-library/no-await-sync-query": "error",
+        "testing-library/no-debugging-utils": "warn",
+        "testing-library/no-dom-import": "off"
+      },
+      "env": {
+        "jest/globals": true // enable Jest global variables.
+      }
+    }
+  ]
+}

@@ -1,25 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { AppRoutes } from './constants';
+import { MainPage } from './components/pages/MainPage/MainPage';
+import { EmptyPage } from './components/pages/EmptyPage/EmptyPage';
+import { LoginScreen } from './components/pages/LoginPage/LoginPage';
+import { ResultPage } from './components/pages/ResultPage/ResultPage';
+import { StatsPage } from './components/pages/StatsPage/StatsPage';
+import { DefaultLayout } from './components/layout/DefaultLayout/DefaultLayout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DefaultLayout>
+      <Routes>
+        <Route
+          path={AppRoutes.ROOT}
+          element={<MainPage />}
+        />
+        <Route
+          path={AppRoutes.LOGIN}
+          element={<LoginScreen />}
+        />
+        <Route
+          path={AppRoutes.RESULT}
+          element={<ResultPage />}
+        />
+        <Route
+          path={AppRoutes.STATS}
+          element={<StatsPage />}
+        />
+        <Route
+          path="*"
+          element={<EmptyPage />}
+        />
+      </Routes>
+    </DefaultLayout>
   );
 }
 

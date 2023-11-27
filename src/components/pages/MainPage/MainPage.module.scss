@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 75px;
+  position: relative;
+  align-items: stretch;
+  max-width: 920px;
+  width: 80%;
+}
+
+.message {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}

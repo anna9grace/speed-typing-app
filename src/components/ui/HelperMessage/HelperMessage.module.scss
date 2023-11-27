@@ -1,0 +1,15 @@
+.wrapper {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .4);
+  color: #f1f1f1;
+  padding: 10px 30px;
+
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+}

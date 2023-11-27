@@ -1,0 +1,33 @@
+.wrapper {
+  padding: 13px 40px;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.nav_link {
+  margin-left: 20px;
+
+  & a {
+    padding: 10px 8px;
+    color: #656565;
+  }
+}
+
+.login_menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
